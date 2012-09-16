@@ -115,7 +115,7 @@ module Redmine
           link_to title, url_params
         end
 
-        content = "Backlinks: " + links.join(" • ")
+        content = "Backlinks: " + links.join(" &bull; ")
         content.html_safe
       end
 
