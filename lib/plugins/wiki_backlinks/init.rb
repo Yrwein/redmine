@@ -29,7 +29,7 @@ Redmine::WikiFormatting::Macros.register do
       link_to title, url_params
     end
 
-    content = "Backlinks: " + links.join(" &bull; ")
+    content = "Backlinks: <ul><li>" + links.join("</li><li>") + "</li></ul>"
     content.html_safe
   end
 end
