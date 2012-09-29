@@ -22,6 +22,10 @@ Redmine::WikiFormatting::Macros.register do
     )
     results = results_all_projects + results_current_project
 
+    results = results.reject do |page|
+      page.id == obj.id
+    end
+
     links = results.map do |page|
       title = page.pretty_title
       title = page.project.name + ": " + title if page.project != @project
